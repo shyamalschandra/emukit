@@ -45,7 +45,7 @@ class CostSensitiveBayesianOptimizationLoop(OuterLoop):
         if model_updater_objective is None:
             model_updater_objective = FixedIntervalUpdater(model_objective, 1)
         if model_updater_cost is None:
-            model_updater_cost = FixedIntervalUpdater(model_cost, 1, lambda state: state.cost)
+            model_updater_cost = FixedIntervalUpdater(model_cost, 1)
 
         if candidate_point_calculator is None:
             acquisition_optimizer = AcquisitionOptimizer(space)
